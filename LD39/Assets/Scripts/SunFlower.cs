@@ -92,7 +92,7 @@ public class SunFlower : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.GetComponent<Enemy>())
         {
             EnemyController enemy = other.gameObject.GetComponent<EnemyController>();
             waterLevel.TakeDamage(enemy.Damage);

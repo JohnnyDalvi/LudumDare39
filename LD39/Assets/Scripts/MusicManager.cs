@@ -19,7 +19,6 @@ public class MusicManager : MonoBehaviour
         if (sceneNumber <= musics.Length - 1)
             musicPlayer.clip = musics[sceneNumber];
         musicPlayer.Play();
-        print("music playing");
     }
 
 }

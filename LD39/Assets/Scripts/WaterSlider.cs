@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class WaterSlider : MonoBehaviour {
+public class WaterSlider : MonoBehaviour
+{
 
-    void Start()
+    void Awake()
     {
         WaterLevel.waterSlider = this.GetComponent<Slider>();
     }

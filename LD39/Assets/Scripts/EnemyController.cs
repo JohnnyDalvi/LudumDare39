@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public partial class EnemyController : MonoBehaviour
 {
     public Vector3 target;
     public float Damage = 50;
@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour
     public float KnockBackPower = 10;
     public float moveSpeed = 1;
     protected Vector3 waypoint;
+    public bool isStatic;
 
 
     void MoveTo(Vector3 target)
@@ -17,7 +18,8 @@ public class EnemyController : MonoBehaviour
 
     void FixedUpdate()
     {
-        MoveTo(WayPointChoser());
+        if (!isStatic)
+            MoveTo(WayPointChoser());
     }
 
     protected virtual Vector3 WayPointChoser()
