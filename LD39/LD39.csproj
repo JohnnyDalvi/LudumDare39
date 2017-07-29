@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>WebGL:20</UnityBuildTarget>
     <UnityVersion>5.6.1f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -80,6 +82,8 @@
   <ItemGroup>
     <Compile Include="Assets\DayNight.cs" />
     <Compile Include="Assets\GameController.cs" />
+    <Compile Include="Assets\LadyBugController.cs" />
+    <Compile Include="Assets\LosePanel.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -127,6 +131,8 @@
     <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
     <Compile Include="Assets\SafeHeaven.cs" />
     <Compile Include="Assets\Scripts\AudioController.cs" />
+    <Compile Include="Assets\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\GUIOverallOptions.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\LoadingScript.cs" />
@@ -137,6 +143,8 @@
     <Compile Include="Assets\Scripts\PlayerPreferences.cs" />
     <Compile Include="Assets\Scripts\UIEditorController.cs" />
     <Compile Include="Assets\SunFlower.cs" />
+    <Compile Include="Assets\WaterLevel.cs" />
+    <Compile Include="Assets\WaterSlider.cs" />
     <Compile Include="Assets\WinPanel.cs" />
   </ItemGroup>
   <ItemGroup>

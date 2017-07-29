@@ -9,7 +9,6 @@ public class SunFlower : MonoBehaviour
     float horizontal;
     float vertical;
     float speedMultiplier;
-
     void Start()
     {
         initialSpeedInsulation = speedInsulation;
@@ -49,4 +48,13 @@ public class SunFlower : MonoBehaviour
         speedInsulation = initialSpeedInsulation * insulation;
         speedMultiplier = (moveSpeed + speedInsulation) * Time.fixedDeltaTime;
     }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            
+        }
+    }
 }
+
