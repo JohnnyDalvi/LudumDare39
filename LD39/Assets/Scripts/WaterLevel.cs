@@ -76,7 +76,8 @@ public class WaterLevel : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-
+        currentWater -= amount;
+        ClampWater();
     }
 }
 
