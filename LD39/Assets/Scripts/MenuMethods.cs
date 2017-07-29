@@ -41,6 +41,11 @@ public class MenuMethods : MonoBehaviour
         AudioController.PlayButtonSound(source);
     }
 
+    public void RestartLevel()
+    {
+        LevelManager.instance.ReloadLevel();
+    }
+
     public void changeVolumes()
     {
         if (Timer >= 10)

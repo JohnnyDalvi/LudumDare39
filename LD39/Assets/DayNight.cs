@@ -24,7 +24,6 @@ public class DayNight : MonoBehaviour
         dayTime = new TimeSpan(6, 00, 00);
         timeTick = new TimeSpan(0, MinutesTick, 0);
         skyIllumation = GetComponent<Image>();
-        print(skyIllumation.color);
         StartCoroutine(timeHappens());
     }
 

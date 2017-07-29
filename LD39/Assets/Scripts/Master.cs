@@ -112,10 +112,10 @@ public class Master : MonoBehaviour
 
     public static void ResetGame()
     {
-        if (OnReset != null)
-            OnReset();
         if (isPaused)
             UnPauseGame();
+        if (OnReset != null)
+            OnReset();
 #if UNITY_EDITOR
         if (printEvents)
             print("OnReset() Event on " + time.ToString("0.0s"));

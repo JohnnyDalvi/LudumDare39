@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\DayNight.cs" />
+    <Compile Include="Assets\GameController.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -124,6 +125,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
     <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
+    <Compile Include="Assets\SafeHeaven.cs" />
     <Compile Include="Assets\Scripts\AudioController.cs" />
     <Compile Include="Assets\Scripts\GUIOverallOptions.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
@@ -135,6 +137,7 @@
     <Compile Include="Assets\Scripts\PlayerPreferences.cs" />
     <Compile Include="Assets\Scripts\UIEditorController.cs" />
     <Compile Include="Assets\SunFlower.cs" />
+    <Compile Include="Assets\WinPanel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Plugins\PropertyInspector\Editor\changelog.txt" />
