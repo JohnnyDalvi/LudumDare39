@@ -17,7 +17,7 @@ public class AudioController : MonoBehaviour
         {
             if (_instance == null)
             {
-                return FindObjectOfType<AudioController>();
+                _instance = FindObjectOfType<AudioController>();
             }
             return _instance;
         }

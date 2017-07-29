@@ -78,6 +78,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DayNight.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -133,6 +134,7 @@
     <Compile Include="Assets\Scripts\MusicManager.cs" />
     <Compile Include="Assets\Scripts\PlayerPreferences.cs" />
     <Compile Include="Assets\Scripts\UIEditorController.cs" />
+    <Compile Include="Assets\SunFlower.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Plugins\PropertyInspector\Editor\changelog.txt" />

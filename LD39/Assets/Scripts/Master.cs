@@ -29,9 +29,13 @@ public class Master : MonoBehaviour
 
     public static event Reset OnReset;
 
+    public delegate void HourChange(float hour, float insulation);
+
+    public static event HourChange OnHourChange;
+
     #endregion
 
-    
+
     static bool printEvents
     {
         get { return instance._printEvents; }
@@ -67,6 +71,17 @@ public class Master : MonoBehaviour
 #if UNITY_EDITOR
         if (printEvents)
             print("OnSceneLoaded() Event on " + time.ToString("0.0s"));
+#endif
+    }
+
+    public static void ChangeCurrentHour(float newHour, float insulation)
+    {
+        if (OnHourChange != null)
+            OnHourChange(newHour, insulation);
+
+#if UNITY_EDITOR
+        if (printEvents)
+            print(string.Format("OnHourChange({0}, {1}) Event on {2}", newHour, insulation, time.ToString("0.0s")));
 #endif
     }
 
