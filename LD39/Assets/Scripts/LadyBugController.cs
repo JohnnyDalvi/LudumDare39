@@ -29,7 +29,7 @@ public class LadyBugController : EnemyController
         }
         else
             transform.position += direction.normalized * moveSpeed * Time.fixedDeltaTime;
-
+        lookAtDirection(target);
     }
 
     protected override Vector3 WayPointChoser()
@@ -43,6 +43,7 @@ public class LadyBugController : EnemyController
         waypoint = wayPoints[currentWaypoint].position;
 
         return base.WayPointChoser();
+
 
     }
 

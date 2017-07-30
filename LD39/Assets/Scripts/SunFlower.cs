@@ -12,6 +12,7 @@ public class SunFlower : MonoBehaviour
     static bool Stunned;
     static float StunnedTime;
     static SunFlower _instance;
+    Animator myAmin;
     WaterLevel waterLevel;
     Rigidbody2D myRig;
     public static SunFlower instance
@@ -28,6 +29,7 @@ public class SunFlower : MonoBehaviour
 
     void Awake()
     {
+        myAmin = GetComponent<Animator>();
         myRig = GetComponent<Rigidbody2D>();
         waterLevel = GetComponent<WaterLevel>();
         _instance = this;
@@ -43,16 +45,16 @@ public class SunFlower : MonoBehaviour
     void Movement()
     {
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             horizontal = -1;
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             horizontal = 1;
         else
             horizontal = 0;
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             vertical = 1;
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
             vertical = -1;
         else
             vertical = 0;
@@ -65,7 +67,36 @@ public class SunFlower : MonoBehaviour
         {
             Vector2 MoveVector = new Vector2(horizontal, vertical).normalized;
             MoveVector = new Vector2(MoveVector.x * speedMultiplier, MoveVector.y * speedMultiplier);
-            transform.position += new Vector3(MoveVector.x, MoveVector.y, 0);
+            float animSpeed = (MoveVector.magnitude * 100);
+            if (animSpeed >= 0.5f)
+            {
+                myAmin.SetFloat("Speed", animSpeed);
+                myAmin.speed = animSpeed;
+            }
+            else
+            {
+                myAmin.SetFloat("Speed", 0);
+                myAmin.speed = 1;
+
+            }
+            Vector3 walkingDirection = new Vector3(MoveVector.x, MoveVector.y, 0);
+            transform.position += walkingDirection;
+            lookAtDirection(transform.position + walkingDirection);
+        }
+    }
+
+    void lookAtDirection(Vector3 target)
+    {
+
+        Vector3 toTarget = target - gameObject.transform.position;
+        toTarget.Normalize();
+        Vector3 curVel = (transform.position - target) / Time.deltaTime;
+        if (curVel != Vector3.zero)
+        {
+
+            float angle = Mathf.Atan2(curVel.y, curVel.x) * Mathf.Rad2Deg + 180;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
         }
     }
 

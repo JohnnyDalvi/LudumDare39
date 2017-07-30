@@ -78,6 +78,7 @@ public class CaterpillarController : EnemyController
             finalDirection = direction;
         }
         transform.position += finalDirection.normalized * moveSpeed * Time.fixedDeltaTime;
+        lookAtDirection(finalDirection + transform.position);
 
     }
 
