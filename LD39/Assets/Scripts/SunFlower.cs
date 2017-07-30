@@ -95,6 +95,8 @@ public class SunFlower : MonoBehaviour
         if (other.gameObject.GetComponent<Enemy>())
         {
             EnemyController enemy = other.gameObject.GetComponent<EnemyController>();
+            if (!enemy)
+                enemy = other.gameObject.GetComponent<CaterpillarBody>().headReference;
             waterLevel.TakeDamage(enemy.Damage);
             Vector2 knockVector2 = new Vector2(transform.position.x - enemy.transform.position.x, transform.position.y - enemy.transform.position.y);
             KnockBack(enemy.KnockBackTime, enemy.KnockBackPower, knockVector2);
