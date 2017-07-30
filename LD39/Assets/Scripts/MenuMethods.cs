@@ -11,8 +11,11 @@ public class MenuMethods : MonoBehaviour
     int Timer;
     void Adressingvalue()
     {
-        volumeSlider.value = AudioController.instance.currentMasterVol;
-        musicSlider.value = AudioController.instance.currentMusic;
+        if (volumeSlider != null && musicSlider != null)
+        {
+            volumeSlider.value = AudioController.instance.currentMasterVol;
+            musicSlider.value = AudioController.instance.currentMusic;
+        }
     }
 
     void Update()
