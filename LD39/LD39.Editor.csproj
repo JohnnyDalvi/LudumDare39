@@ -165,6 +165,7 @@
     <Compile Include="Assets\PostProcessing\Editor\Utils\FxStyles.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Utils\ReflectionUtils.cs" />
     <Compile Include="Assets\Scripts\Editor\ExtensionMethods.cs" />
+    <Compile Include="Assets\Scripts\Editor\LineDrawing.cs" />
     <Compile Include="Assets\Scripts\Editor\UIEditor.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -46,7 +46,7 @@ public class LevelManager : MonoBehaviour
         if (Time.timeScale != 1)
         {
             Time.timeScale = 1;
-            Time.fixedDeltaTime = 0.02f;
+            Time.fixedDeltaTime = 0.01f;
         }
         SceneManager.LoadScene(name);
     }

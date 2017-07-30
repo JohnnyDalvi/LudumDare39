@@ -100,7 +100,7 @@ public class Master : MonoBehaviour
     public static void UnPauseGame()
     {
         Time.timeScale = 1;
-        Time.fixedDeltaTime = 0.02f;
+        Time.fixedDeltaTime = 0.01f;
 
         if (OnUnPause != null)
             OnUnPause();

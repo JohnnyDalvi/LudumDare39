@@ -34,7 +34,7 @@ public class FloorButton : MonoBehaviour
     void OnTriggerExit2D(Collider2D other)
     {
         ChangeColor(true);
-        if (hasOpened = true)
+        if (hasOpened)
         {
             StartCoroutine(door.CloseDoorEnum());
         }
