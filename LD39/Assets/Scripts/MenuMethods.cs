@@ -46,6 +46,11 @@ public class MenuMethods : MonoBehaviour
         LevelManager.instance.ReloadLevel();
     }
 
+    public void NextLevel()
+    {
+        LevelManager.instance.LoadNextLevelin(0);
+    }
+
     public void changeVolumes()
     {
         if (Timer >= 10)

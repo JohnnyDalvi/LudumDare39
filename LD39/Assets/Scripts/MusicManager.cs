@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MusicManager : MonoBehaviour
@@ -18,6 +19,10 @@ public class MusicManager : MonoBehaviour
         int sceneNumber = SceneManager.GetActiveScene().buildIndex;
         if (sceneNumber <= musics.Length - 1)
             musicPlayer.clip = musics[sceneNumber];
+        else
+        {
+            musicPlayer.clip = musics.Last();
+        }
         musicPlayer.Play();
     }
 

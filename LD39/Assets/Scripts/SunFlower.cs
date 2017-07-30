@@ -15,6 +15,7 @@ public class SunFlower : MonoBehaviour
     Animator myAmin;
     WaterLevel waterLevel;
     Rigidbody2D myRig;
+    AudioSource myAudioSource;
     public static SunFlower instance
     {
         get
@@ -29,6 +30,7 @@ public class SunFlower : MonoBehaviour
 
     void Awake()
     {
+        myAudioSource = GetComponent<AudioSource>();
         myAmin = GetComponent<Animator>();
         myRig = GetComponent<Rigidbody2D>();
         waterLevel = GetComponent<WaterLevel>();
@@ -129,6 +131,7 @@ public class SunFlower : MonoBehaviour
             if (!enemy)
                 enemy = other.gameObject.GetComponent<CaterpillarBody>().headReference;
             waterLevel.TakeDamage(enemy.Damage);
+            myAudioSource.Play();
             Vector2 knockVector2 = new Vector2(transform.position.x - enemy.transform.position.x, transform.position.y - enemy.transform.position.y);
             KnockBack(enemy.KnockBackTime, enemy.KnockBackPower, knockVector2);
         }
