@@ -17,11 +17,12 @@ public class DayNight : MonoBehaviour
     float insulation;
     public Text timeText;
     public Text insulationText;
+    [Range(0, 24)]public int StartingTime = 6;
     int lastHour;
 
     void Start()
     {
-        dayTime = new TimeSpan(6, 00, 00);
+        dayTime = new TimeSpan(StartingTime, 00, 00);
         timeTick = new TimeSpan(0, MinutesTick, 0);
         skyIllumation = GetComponent<Image>();
         StartCoroutine(timeHappens());

@@ -35,7 +35,7 @@ public class WaterLevel : MonoBehaviour
 
     void TimeOfDay(float hour, float insulation)
     {
-        currentDepleateRate = depleateRate * insulation;
+        currentDepleateRate = depleateRate * insulation + 1;
     }
 
     void FixedUpdate()

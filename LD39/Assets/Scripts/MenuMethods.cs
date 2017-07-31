@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuMethods : MonoBehaviour
@@ -9,6 +10,7 @@ public class MenuMethods : MonoBehaviour
     public Slider musicSlider;
     AudioSource source;
     int Timer;
+    public Text levelText;
     void Adressingvalue()
     {
         if (volumeSlider != null && musicSlider != null)
@@ -25,6 +27,8 @@ public class MenuMethods : MonoBehaviour
 
     void Start()
     {
+        if (levelText != null)
+            levelText.text = SceneManager.GetActiveScene().name;
         source = GetComponent<AudioSource>();
         Adressingvalue();
     }
