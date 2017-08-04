@@ -16,7 +16,7 @@ public class GUIOverallOptions : MonoBehaviour
         foreach (Text text in FindObjectsOfType<Text>())
         {
             text.font = overallFont;
-            text.fontStyle = FontStyle.Bold;
+            text.fontStyle = FontStyle.Normal;
         }
     }
 }

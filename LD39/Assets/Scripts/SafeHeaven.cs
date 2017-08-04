@@ -6,6 +6,7 @@ public class SafeHeaven : MonoBehaviour
     float timeToWin = 2;
     float CountingTime;
     bool Count;
+    TimerScript timer;
 
     void Start()
     {
@@ -14,6 +15,7 @@ public class SafeHeaven : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         Count = true;
+        timer = TimerScript.InstantiateTimer(timeToWin, transform.position);
     }
 
     void FixedUpdate()
@@ -30,6 +32,8 @@ public class SafeHeaven : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
+        if (timer)
+            timer.DestroyTimer();
         Count = false;
         CountingTime = 0;
     }

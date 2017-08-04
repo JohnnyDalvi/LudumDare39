@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 02837dddbc8a07b44ac376b5a148af05
+timeCreated: 1501811765
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: SoupLeaf
+  fontNames:
+  - SoupLeaf
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

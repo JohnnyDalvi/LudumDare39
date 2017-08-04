@@ -8,6 +8,7 @@ public class FloorButton : MonoBehaviour
     bool hasOpened;
     public DoorRotor door;
     SpriteRenderer myImage;
+    TimerScript timer;
 
     void Start()
     {
@@ -28,12 +29,15 @@ public class FloorButton : MonoBehaviour
         if (other.GetComponent<SunFlower>())
         {
             isActive = true;
+            timer = TimerScript.InstantiateTimer(timeToOpen, transform.position);
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         ChangeColor(true);
+        if (timer)
+            timer.DestroyTimer();
         if (hasOpened)
         {
             StartCoroutine(door.CloseDoorEnum());
